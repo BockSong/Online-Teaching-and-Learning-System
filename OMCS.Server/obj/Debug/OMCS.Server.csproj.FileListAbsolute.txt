@@ -1,0 +1,167 @@
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\ResolveAssemblyReference.cache
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\ResGen.read.1.tlog
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\ResGen.write.1.tlog
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.dll
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+E:\0.work\06. demos\omcs_1031\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.xml
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\ResolveAssemblyReference.cache
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\ResGen.read.1.tlog
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\ResGen.write.1.tlog
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.dll
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.xml
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+E:\0.work\06. demos\omcs_demos 2015.3.24\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.dll
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+C:\Users\zhuhao\Desktop\新建文件夹\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.xml
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.dll
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.xml
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.dll
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.xml
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\obj\Debug\OMCS.Server.exe
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\obj\Debug\OMCS.Server.pdb
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\OMCS.Server.exe
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\OMCS.Server.pdb
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\ESBasic.dll
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\OMCS.dll
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\PaintFramework.dll
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\ESBasic.xml
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\OMCS.xml
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\bin\Debug\PaintFramework.xml
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+E:\QQQQQQQQQQQQQQQQQQQQQQQQQ\OMCS\1.OMCS.Demos.Simplest生成成功\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+C:\Users\david\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csprojResolveAssemblyReference.cache
+D:\Users\dudu\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+D:\Users\dudu\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+D:\Users\dudu\Downloads\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.dll
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\PaintFramework.xml
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csprojResolveAssemblyReference.cache
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+E:\qqqqqqqqqqqqqqqqqq\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+E:\替换dll\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csprojResolveAssemblyReference.cache
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Boost.dll
+G:\替换dll\OMCS相关\OMCS相关Demo\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Boost.xml
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Boost.dll
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Boost.xml
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csprojResolveAssemblyReference.cache
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+G:\替换工具\work\OMCS相关\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.pdb
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.dll
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Boost.dll
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.dll
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\ESBasic.xml
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.xml
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Boost.xml
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csprojResolveAssemblyReference.cache
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+C:\360安全浏览器下载\替换工具\work\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
+C:\Users\Sion\Desktop\1.OMCS.Demos.Simplest\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+C:\Users\Sion\Desktop\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.exe
+C:\Users\Sion\Desktop\1.OMCS.Demos.Simplest\OMCS.Server\obj\Debug\OMCS.Server.pdb
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\bin\Debug\OMCS.Server.exe.config
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\obj\Debug\OMCS.Server.exe
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\obj\Debug\OMCS.Server.pdb
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\bin\Debug\OMCS.Server.exe
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\bin\Debug\OMCS.Server.pdb
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\bin\Debug\ESBasic.xml
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\bin\Debug\OMCS.xml
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\bin\Debug\OMCS.Boost.xml
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\obj\Debug\OMCS.Server.csprojResolveAssemblyReference.cache
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\obj\Debug\OMCS.Server.Properties.Resources.resources
+D:\学业\大学\大三下\软工课设\Project\OMCS.Server\obj\Debug\OMCS.Server.csproj.GenerateResource.Cache
