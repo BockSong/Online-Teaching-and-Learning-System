@@ -273,8 +273,7 @@ namespace Server2DataBase
             SelectAdapter.Fill(this._tmpDataSet, tableTitle);
             return new Result(baseResult.Successful);
         }
-
-
+        
 
         //7.4新加入
         /// <summary>
