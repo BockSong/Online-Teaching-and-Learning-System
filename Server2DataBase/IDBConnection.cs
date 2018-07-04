@@ -25,7 +25,7 @@ namespace Server2DataBase
         /// <param name="userId">用户ID</param>
         /// <param name="password">密码</param>
         /// <returns>处理结果</returns>
-        IResult AddUser(UserInfo info, string password);
+        IResult AddUser(UserInfo info, string password, int age = 20, string sex = "man");
 
         /// <summary>
         /// 验证用户信息
