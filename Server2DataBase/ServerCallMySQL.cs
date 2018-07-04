@@ -32,7 +32,7 @@ namespace Server2DataBase
 
         private static MySqlConnection sqlConnection;
         private static bool init = false;
-        private DataSet _tmpDataSet = new DataSet();
+        private DataSet _tmpDataSet = new DataSet();  //[记录序号][属性序号]
         /// <summary>
         /// 执行语句结果(只读)
         /// </summary>
@@ -279,6 +279,8 @@ namespace Server2DataBase
         {
             if (ExecuteStructuredQueryLanguage(String.Format(checkRoomExist, roomid), "IsRoomExist").BaseResult == baseResult.Faild)
                 return false;
+            if (((this._tmpDataSet.Tables["IsRoomExist"].Rows)[0])[0].ToString() == "0")
+                return false;
             return true;
         }
         /// <summary>
@@ -307,6 +309,8 @@ namespace Server2DataBase
         private bool IsRecordExist(int recordid)
         {
             if (ExecuteStructuredQueryLanguage(String.Format(checkRoomExist, recordid), "IsRecordExist").BaseResult == baseResult.Faild)
+                return false;
+            if (((this._tmpDataSet.Tables["IsRecordExist"].Rows)[0])[0].ToString() == "0")
                 return false;
             return true;
         }
@@ -339,6 +343,8 @@ namespace Server2DataBase
         private bool IsHaveExist(int roomid, int recordid)
         {
             if (ExecuteStructuredQueryLanguage(String.Format(checkHaveExist, roomid, recordid), "IsHaveExist").BaseResult == baseResult.Faild)
+                return false;
+            if (((this._tmpDataSet.Tables["IsHaveExist"].Rows)[0])[0].ToString() == "0")
                 return false;
             return true;
         }
@@ -373,10 +379,14 @@ namespace Server2DataBase
                     return new List<string>();
                 else
                 {
-                    string[] result = ((this._tmpDataSet.Tables["GetRecord"].Rows)[0])[0].ToString().Split(',');
+                    List<string> result = new List<string>();
+                    for (int i = 0; i < this._tmpDataSet.Tables["GetRecord"].Select().Length; i++ )
+                    {
+                        result.Add(((this._tmpDataSet.Tables["GetRecord"].Rows)[i])[0].ToString());
+                    }
                     if (result[0] == "")
                         return new List<string>();
-                    return new List<string>(result);
+                    return result;
                 }
             }
             else
@@ -392,6 +402,8 @@ namespace Server2DataBase
         private bool IsJoinExist(int userid, int roomid)
         {
             if (ExecuteStructuredQueryLanguage(String.Format(checkJoinExist, userid, roomid), "IsJoinExist").BaseResult == baseResult.Faild)
+                return false;
+            if (((this._tmpDataSet.Tables["IsJoinExist"].Rows)[0])[0].ToString() == "0")
                 return false;
             return true;
         }
@@ -413,28 +425,28 @@ namespace Server2DataBase
             }
             return new Result(baseResult.Successful, "成功");
         }
-        /// <summary>
-        /// 获取用户列表
-        /// </summary>
-        /// <param name="roomid"></param>
-        /// <returns></returns>
-        public List<string> GetUser(int roomid)
-        {
-            if (IsRoomExist(roomid))
-            {
-                if (ExecuteStructuredQueryLanguage(String.Format(getuser, roomid), "GetUser").BaseResult == baseResult.Faild)
-                    return new List<string>();
-                else
-                {
-                    string[] result = ((this._tmpDataSet.Tables["GetUser"].Rows)[0])[0].ToString().Split(',');
-                    if (result[0] == "")
-                        return new List<string>();
-                    return new List<string>(result);
-                }
-            }
-            else
-                return new List<string>();
-        }
+        ///// <summary>
+        ///// 获取用户列表
+        ///// </summary>
+        ///// <param name="roomid"></param>
+        ///// <returns></returns>
+        //public List<string> GetUser(int roomid)
+        //{
+        //    if (IsRoomExist(roomid))
+        //    {
+        //        if (ExecuteStructuredQueryLanguage(String.Format(getuser, roomid), "GetUser").BaseResult == baseResult.Faild)
+        //            return new List<string>();
+        //        else
+        //        {
+        //            string[] result = ((this._tmpDataSet.Tables["GetUser"].Rows)[0])[0].ToString().Split(',');
+        //            if (result[0] == "")
+        //                return new List<string>();
+        //            return new List<string>(result);
+        //        }
+        //    }
+        //    else
+        //        return new List<string>();
+        //}
 
     }
 }

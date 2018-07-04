@@ -13,8 +13,8 @@ namespace DBTest
     {
         static void Main(string[] args)
         {
-            IDBConnection scd = new ServerCallDatabase();
-            IResult r = scd.ConnectDatabase("sa","1213141516","127.0.0.1","NCDB");
+            IDBConnection scd = new ServerCallMySQL();
+            IResult r = scd.ConnectDatabase("root", "123456", "154.8.211.49", "NCDB");
             #region Shop
             //scd.ExecuteStructuredQueryLanguage(@"select 名称 from 商店 where 商店.地址 LIKE '上海%'","aa");
             //foreach (DataRow theRow in scd.TmpDataSet.Tables["aa"].Rows)
@@ -25,6 +25,22 @@ namespace DBTest
             //foreach (DataRow theRow in scd.TmpDataSet.Tables["aa"].Rows)
             //{
             //    Console.WriteLine(theRow["名称"]);
+            //}
+            //Console.Read();
+            #endregion
+            #region NC
+            scd.ExecuteStructuredQueryLanguage(@"select recordid from haverecord where roomid=1", "aa");
+            List<string> result = new List<string>();
+            for (int i = 0; i < scd.TmpDataSet.Tables["aa"].Select().Length; i++)
+            {
+                result.Add(((scd.TmpDataSet.Tables["aa"].Rows)[i])[0].ToString());
+            }
+            Console.WriteLine(result[0]);
+            //Console.WriteLine(result.Length);
+            //Console.WriteLine(scd.TmpDataSet.Tables["aa"].Rows[1][0]); 
+            //foreach (DataRow theRow in scd.TmpDataSet.Tables["aa"].Rows)
+            //{
+            //    Console.WriteLine(theRow["recordid"]);
             //}
             //Console.Read();
             #endregion

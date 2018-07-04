@@ -11,3 +11,16 @@ G:\C#example\NetworkConference\DBTest\obj\Debug\DBTest.pdb
 G:\C#example\NetworkConference\DBTest\bin\Debug\MySql.Data.dll
 G:\C#example\NetworkConference\DBTest\bin\Debug\Google.Protobuf.dll
 G:\C#example\NetworkConference\DBTest\bin\Debug\MySql.Data.xml
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\DBTest.exe.config
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\obj\Debug\DBTest.exe
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\obj\Debug\DBTest.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\DBTest.exe
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\DBTest.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\NCLib.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\Server2DataBase.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\MySql.Data.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\Google.Protobuf.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\NCLib.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\Server2DataBase.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\bin\Debug\MySql.Data.xml
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\DBTest\obj\Debug\DBTest.csprojResolveAssemblyReference.cache
