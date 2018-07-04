@@ -9,12 +9,25 @@ namespace Server2DataBase
     public class ServerCallMySQL : IDBConnection
     {
         #region 静态字段
-        private static string checkExit = "select count(*) from user where userid='{0}'";
-        private static string checkExit2 = "select count(*) from user where userid='{0}' and password='{1}'";
+        private static string checkExist = "select count(*) from user where userid='{0}'";
+        private static string checkExist2 = "select count(*) from user where userid='{0}' and password='{1}'";
         private static string addUser = "insert into user values('{0}','{1}','{2}',0)";
         private static string isPrerogative = "select count(*) from user where userid='{0}' and permission=1";
         private static string getfriend = "select friends from user where userid='{0}'";
         private static string setfriend = "update user set friends = '{0}' WHERE userid = '{1}'";
+
+        private static string checkRoomExist = "select count(*) from room where roomid='{0}'";
+        private static string addRoom = "insert into room values('{0}')";
+        private static string checkRecordExist = "select count(*) from record where recordid='{0}'";
+        private static string addRecord = "insert into record values('{0}','{1}')";
+
+        private static string checkHaveExist = "select count(*) from haverecord where roomid='{0}' and recordid='{1}'";
+        private static string addHave = "insert into haverecord values('{0}','{1}')";
+        private static string getrecord = "select recordid from haverecord where roomid='{0}'";
+
+        private static string checkJoinExist = "select count(*) from joinroom where userid='{0}' and roomid='{1}'";
+        private static string addJoin = "insert into joinroom values('{0}','{1}')";
+        private static string getuser = "select userid from joinroom where roomid='{0}'";
         #endregion
 
         private static MySqlConnection sqlConnection;
@@ -41,14 +54,14 @@ namespace Server2DataBase
         {
             if (password == null)
             {
-                if (ExecuteStructuredQueryLanguage(String.Format(checkExit, info.UserId), "IsExist").BaseResult == baseResult.Faild)
+                if (ExecuteStructuredQueryLanguage(String.Format(checkExist, info.UserId), "IsExist").BaseResult == baseResult.Faild)
                     return false;
                 if (((this._tmpDataSet.Tables["IsExist"].Rows)[0])[0].ToString() == "0")
                     return false;
             }
             else
             {
-                if (ExecuteStructuredQueryLanguage(String.Format(checkExit2, info.UserId, password), "IsExist").BaseResult == baseResult.Faild)
+                if (ExecuteStructuredQueryLanguage(String.Format(checkExist2, info.UserId, password), "IsExist").BaseResult == baseResult.Faild)
                     return false;
                 if (((this._tmpDataSet.Tables["IsExist"].Rows)[0])[0].ToString() == "0")
                     return false;
@@ -66,14 +79,14 @@ namespace Server2DataBase
         {
             if (password == null)
             {
-                if (ExecuteStructuredQueryLanguage(String.Format(checkExit, infoid), "IsExist").BaseResult == baseResult.Faild)
+                if (ExecuteStructuredQueryLanguage(String.Format(checkExist, infoid), "IsExist").BaseResult == baseResult.Faild)
                     return false;
                 if (((this._tmpDataSet.Tables["IsExist"].Rows)[0])[0].ToString() == "0")
                     return false;
             }
             else
             {
-                if (ExecuteStructuredQueryLanguage(String.Format(checkExit2, infoid, password), "IsExist").BaseResult == baseResult.Faild)
+                if (ExecuteStructuredQueryLanguage(String.Format(checkExist2, infoid, password), "IsExist").BaseResult == baseResult.Faild)
                     return false;
                 if (((this._tmpDataSet.Tables["IsExist"].Rows)[0])[0].ToString() == "0")
                     return false;
@@ -254,5 +267,174 @@ namespace Server2DataBase
             SelectAdapter.Fill(this._tmpDataSet, tableTitle);
             return new Result(baseResult.Successful);
         }
+
+
+
+        /// <summary>
+        /// 验证答疑室(或存在)
+        /// </summary>
+        /// <param name="roomid">答疑室ID</param>
+        /// <returns>结果</returns>
+        private bool IsRoomExist(int roomid)
+        {
+            if (ExecuteStructuredQueryLanguage(String.Format(checkRoomExist, roomid), "IsRoomExist").BaseResult == baseResult.Faild)
+                return false;
+            return true;
+        }
+        /// <summary>
+        /// 添加答疑室
+        /// </summary>
+        /// <param name="roomid">答疑室ID</param>
+        /// <param name="count">答疑人数</param>
+        /// <returns>处理结果</returns>
+        public IResult AddRoom(int roomid, int count)
+        {
+            if (IsRoomExist(roomid))
+                return new Result(baseResult.Faild, "已存在答疑室");
+            else
+            {
+                IResult tmpResult = ExecuteStructuredQueryLanguage(String.Format(addRoom, count), "AddRoom");
+                if (tmpResult.BaseResult == baseResult.Faild)
+                    return tmpResult;
+            }
+            return new Result(baseResult.Successful, "成功");
+        }
+        /// <summary>
+        /// 验证答疑室记录(或存在)
+        /// </summary>
+        /// <param name="roomid">答疑室记录ID</param>
+        /// <returns>结果</returns>
+        private bool IsRecordExist(int recordid)
+        {
+            if (ExecuteStructuredQueryLanguage(String.Format(checkRoomExist, recordid), "IsRecordExist").BaseResult == baseResult.Faild)
+                return false;
+            return true;
+        }
+        /// <summary>
+        /// 添加答疑室记录
+        /// </summary>
+        /// <param name="info">用户信息</param>
+        /// <param name="userId">用户ID</param>
+        /// <param name="password">密码</param>
+        /// <returns>处理结果</returns>
+        public IResult AddRecord(int recordid, DateTime starttime, DateTime endtime)
+        {
+            if (IsRecordExist(recordid))
+                return new Result(baseResult.Faild, "已存在答疑室记录");
+            else
+            {
+                IResult tmpResult = ExecuteStructuredQueryLanguage(String.Format(addRecord, starttime, endtime), "AddRecord");
+                if (tmpResult.BaseResult == baseResult.Faild)
+                    return tmpResult;
+            }
+            return new Result(baseResult.Successful, "成功");
+        }
+
+        /// <summary>
+        /// 验证拥有关系(或存在)
+        /// </summary>
+        /// <param name="roomid">答疑室ID</param>
+        /// <param name="recordid">答疑室记录ID</param>
+        /// <returns>结果</returns>
+        private bool IsHaveExist(int roomid, int recordid)
+        {
+            if (ExecuteStructuredQueryLanguage(String.Format(checkHaveExist, roomid, recordid), "IsHaveExist").BaseResult == baseResult.Faild)
+                return false;
+            return true;
+        }
+        /// <summary>
+        /// 添加拥有关系
+        /// </summary>
+        /// <param name="roomid">答疑室ID</param>
+        /// <param name="recordid">答疑室记录ID</param>
+        /// <returns>处理结果</returns>
+        public IResult AddHave(int roomid, int recordid)
+        {
+            if (IsHaveExist(roomid, recordid))
+                return new Result(baseResult.Faild, "已存在拥有关系");
+            else
+            {
+                IResult tmpResult = ExecuteStructuredQueryLanguage(String.Format(addHave, roomid, recordid), "AddHave");
+                if (tmpResult.BaseResult == baseResult.Faild)
+                    return tmpResult;
+            }
+            return new Result(baseResult.Successful, "成功");
+        }
+        /// <summary>
+        /// 获取记录列表
+        /// </summary>
+        /// <param name="roomid"></param>
+        /// <returns></returns>
+        public List<string> GetRecord(int roomid)
+        {
+            if (IsRoomExist(roomid))
+            {
+                if (ExecuteStructuredQueryLanguage(String.Format(getrecord, roomid), "GetRecord").BaseResult == baseResult.Faild)
+                    return new List<string>();
+                else
+                {
+                    string[] result = ((this._tmpDataSet.Tables["GetRecord"].Rows)[0])[0].ToString().Split(',');
+                    if (result[0] == "")
+                        return new List<string>();
+                    return new List<string>(result);
+                }
+            }
+            else
+                return new List<string>();
+        }
+
+        /// <summary>
+        /// 验证加入关系(或存在)
+        /// </summary>
+        /// <param name="userid">用户ID</param>
+        /// <param name="roomid">答疑室ID</param>
+        /// <returns>结果</returns>
+        private bool IsJoinExist(int userid, int roomid)
+        {
+            if (ExecuteStructuredQueryLanguage(String.Format(checkJoinExist, userid, roomid), "IsJoinExist").BaseResult == baseResult.Faild)
+                return false;
+            return true;
+        }
+        /// <summary>
+        /// 添加加入关系
+        /// </summary>
+        /// <param name="userid">用户ID</param>
+        /// <param name="roomid">答疑室ID</param>
+        /// <returns>处理结果</returns>
+        public IResult AddJoin(int userid, int roomid)
+        {
+            if (IsJoinExist(userid, roomid))
+                return new Result(baseResult.Faild, "已存在加入关系");
+            else
+            {
+                IResult tmpResult = ExecuteStructuredQueryLanguage(String.Format(addJoin, userid, roomid), "AddJoin");
+                if (tmpResult.BaseResult == baseResult.Faild)
+                    return tmpResult;
+            }
+            return new Result(baseResult.Successful, "成功");
+        }
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <param name="roomid"></param>
+        /// <returns></returns>
+        public List<string> GetUser(int roomid)
+        {
+            if (IsRoomExist(roomid))
+            {
+                if (ExecuteStructuredQueryLanguage(String.Format(getuser, roomid), "GetUser").BaseResult == baseResult.Faild)
+                    return new List<string>();
+                else
+                {
+                    string[] result = ((this._tmpDataSet.Tables["GetUser"].Rows)[0])[0].ToString().Split(',');
+                    if (result[0] == "")
+                        return new List<string>();
+                    return new List<string>(result);
+                }
+            }
+            else
+                return new List<string>();
+        }
+
     }
 }
