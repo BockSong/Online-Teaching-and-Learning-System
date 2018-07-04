@@ -9,12 +9,12 @@ namespace Server2DataBase
     public class ServerCallMySQL : IDBConnection
     {
         #region 静态字段
-        private static string checkExit = "select count(*) from 用户信息 where 学号='{0}'";
-        private static string checkExit2 = "select count(*) from 用户信息 where 学号='{0}' and 密码='{1}'";
-        private static string addUser = "insert into 用户信息 values('{0}','{1}','{2}',0)";
-        private static string isPrerogative = "select count(*) from 用户信息 where 学号='{0}' and 权限=1";
-        private static string getfriend = "select 好友 from 用户信息 where 学号='{0}'";
-        private static string setfriend = "update 用户信息 set 好友 = '{0}' WHERE 学号 = '{1}'";
+        private static string checkExit = "select count(*) from user where userid='{0}'";
+        private static string checkExit2 = "select count(*) from user where userid='{0}' and password='{1}'";
+        private static string addUser = "insert into user values('{0}','{1}','{2}',0)";
+        private static string isPrerogative = "select count(*) from user where userid='{0}' and permission=1";
+        private static string getfriend = "select friends from user where userid='{0}'";
+        private static string setfriend = "update user set friends = '{0}' WHERE userid = '{1}'";
         #endregion
 
         private static MySqlConnection sqlConnection;

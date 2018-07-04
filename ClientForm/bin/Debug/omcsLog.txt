@@ -31,3 +31,5 @@
 
 2018/6/28 19:42:03 : Current camera [index:-1] is invalid !
 
+2018/7/3 23:13:03 : Current camera [index:-1] is invalid !
+

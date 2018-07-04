@@ -8,3 +8,13 @@ G:\C#example\NetworkConference\Server2DataBase\obj\Debug\Server2DataBase.pdb
 G:\C#example\NetworkConference\Server2DataBase\bin\Debug\MySql.Data.dll
 G:\C#example\NetworkConference\Server2DataBase\bin\Debug\Google.Protobuf.dll
 G:\C#example\NetworkConference\Server2DataBase\bin\Debug\MySql.Data.xml
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\Server2DataBase.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\Server2DataBase.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\MySql.Data.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\NCLib.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\Google.Protobuf.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\NCLib.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\MySql.Data.xml
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\obj\Debug\Server2Database.csprojResolveAssemblyReference.cache
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\obj\Debug\Server2DataBase.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\obj\Debug\Server2DataBase.pdb

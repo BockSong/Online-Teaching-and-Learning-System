@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//控制台，用不上
 namespace Server
 {
     class Program
