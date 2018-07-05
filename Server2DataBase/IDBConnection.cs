@@ -81,7 +81,7 @@ namespace Server2DataBase
         IResult ExecuteStructuredQueryLanguage(string sql, string tableTitle);
 
 
-
+        //version.date.7.5
         /// <summary>
         /// 获取加入日期
         /// </summary>
@@ -120,59 +120,22 @@ namespace Server2DataBase
         IResult SetSex(string userid, string sex);
 
         /// <summary>
-        /// 验证答疑室(或存在)
-        /// </summary>
-        /// <param name="roomid">答疑室ID</param>
-        /// <returns>结果</returns>
-        bool IsRoomExist(int roomid);
-
-        /// <summary>
         /// 添加答疑室
         /// </summary>
         /// <param name="roomid">答疑室ID</param>
         /// <param name="count">答疑人数</param>
         /// <returns>处理结果</returns>
-        IResult AddRoom(int roomid, int count);
-
-        /// <summary>
-        /// 验证答疑室记录(或存在)
-        /// </summary>
-        /// <param name="roomid">答疑室记录ID</param>
-        /// <returns>结果</returns>
-        bool IsRecordExist(int recordid);
+        IResult AddRoom(string roomid, int count);
 
         /// <summary>
         /// 添加答疑室记录
         /// </summary>
-        /// <param name="info">用户信息</param>
-        /// <param name="userId">用户ID</param>
-        /// <param name="password">密码</param>
+        /// <param name="recordid"></param>
+        /// <param name="roomid"></param>
+        /// <param name="starttime"></param>
+        /// <param name="endtime"></param>
         /// <returns>处理结果</returns>
-        IResult AddRecord(int recordid, DateTime starttime, DateTime endtime);
-
-        /// <summary>
-        /// 验证拥有关系(或存在)
-        /// </summary>
-        /// <param name="roomid">答疑室ID</param>
-        /// <param name="recordid">答疑室记录ID</param>
-        /// <returns>结果</returns>
-        bool IsHaveExist(int roomid, int recordid);
-
-        /// <summary>
-        /// 添加拥有关系
-        /// </summary>
-        /// <param name="roomid">答疑室ID</param>
-        /// <param name="recordid">答疑室记录ID</param>
-        /// <returns>处理结果</returns>
-        IResult AddHave(int roomid, int recordid);
-
-        /// <summary>
-        /// 验证加入关系(或存在)
-        /// </summary>
-        /// <param name="userid">用户ID</param>
-        /// <param name="roomid">答疑室ID</param>
-        /// <returns>结果</returns>
-        bool IsJoinExist(int userid, int roomid);
+        IResult AddRecord(string recordid, string roomid, DateTime starttime, DateTime endtime);
 
         /// <summary>
         /// 添加加入关系
@@ -180,58 +143,55 @@ namespace Server2DataBase
         /// <param name="userid">用户ID</param>
         /// <param name="roomid">答疑室ID</param>
         /// <returns>处理结果</returns>
-        IResult AddJoin(int userid, int roomid);
+        IResult AddJoin(string userid, string roomid);
 
         /// <summary>
         /// 获取开始答疑时间
         /// </summary>
         /// <param name="recordid"></param>
+        /// <param name="roomid"></param>
         /// <returns>获取失败时返回9999-01-01</returns>
-        DateTime GetStart(int recordid);
+        DateTime GetStart(string recordid, string roomid);
 
         /// <summary>
         /// 设置开始答疑时间
         /// </summary>
         /// <param name="start"></param>
         /// <param name="recordid"></param>
+        /// <param name="roomid"></param>
         /// <returns></returns>
-        IResult SetStart(DateTime start, int recordid);
+        IResult SetStart(DateTime start, string recordid, string roomid);
 
         /// <summary>
         /// 获取结束答疑时间
         /// </summary>
         /// <param name="recordid"></param>
+        /// <param name="roomid"></param>
         /// <returns>获取失败时返回9999-01-01</returns>
-        DateTime GetEnd(int recordid);
+        DateTime GetEnd(string recordid, string roomid);
 
         /// <summary>
         /// 设置结束答疑时间
         /// </summary>
         /// <param name="end"></param>
         /// <param name="recordid"></param>
-        /// <returns></returns>
-        IResult SetEnd(DateTime end, int recordid);
-
-        /// <summary>
-        /// 获取答疑室的记录列表
-        /// </summary>
         /// <param name="roomid"></param>
         /// <returns></returns>
-        List<string> GetRecord(int roomid);
+        IResult SetEnd(DateTime end, string recordid, string roomid);
 
         /// <summary>
-        /// 获取答疑室的用户列表
+        /// 获取答疑室记录的用户列表
         /// </summary>
-        /// <param name="roomid"></param>
+        /// <param name="recordid"></param>
         /// <returns></returns>
-        List<string> GetUser(int roomid);
+        List<string> GetUser(string recordid);
 
         /// <summary>
         /// 获取答疑室人数
         /// </summary>
         /// <param name="roomid"></param>
         /// <returns>正常情况下返回大于等于0的数；获取失败时返回-1</returns>
-        int GetCount(int roomid);
+        int GetCount(string roomid);
 
         /// <summary>
         /// 设置答疑室人数
@@ -239,6 +199,6 @@ namespace Server2DataBase
         /// <param name="roomid"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        IResult SetCount(int roomid, int count);
+        IResult SetCount(string roomid, int count);
     }
 }
