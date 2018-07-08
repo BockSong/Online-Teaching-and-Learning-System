@@ -43,7 +43,8 @@ namespace Client
             {
                 if (WhiteBoardControl != null)
                 {
-                    WhiteBoardControl.WatchingOnly = value;
+                    WhiteBoardControl.Invoke(new Action(() => { WhiteBoardControl.WatchingOnly = value; }));
+               
                     _isWhiteBoardWatchingOnly = value;
                 }
             }
@@ -72,7 +73,7 @@ namespace Client
         {
             foreach (ChatMember Member in memberList)
             {
-                if (Member.MemberID == memberID)
+                if (Member.GetUserId == memberID)
                 {
                     memberList.Remove(Member);
                     break;
@@ -93,9 +94,18 @@ namespace Client
         }
         #endregion
 
-        public ChatContainer(IMultimediaManager multimediaManager, CameraConnector CameraConnector = null, WhiteBoardConnector WhiteBoardControl = null)
+        public ChatContainer(IMultimediaManager multimediaManager)
         {
-            this.multimediaManager = multimediaManager;
+            this.multimediaManager = multimediaManager;      
+        }
+
+        /// <summary>
+        /// 设置摄像头与白板控件
+        /// </summary>
+        /// <param name="CameraConnector"></param>
+        /// <param name="WhiteBoardControl"></param>
+        public void SetControl(CameraConnector CameraConnector = null, WhiteBoardConnector WhiteBoardControl = null)
+        {
             this.CameraControl = CameraConnector;
             this.WhiteBoardControl = WhiteBoardControl;
             if (CameraControl != null)
@@ -122,7 +132,7 @@ namespace Client
             if (CameraControl != null)
                 this.CameraControl.BeginConnect(teacherID);
             if (WhiteBoardControl != null)
-                this.WhiteBoardControl.BeginConnect(chatGroupID);
+                this.WhiteBoardControl.Invoke(new Action(()=>{ WhiteBoardControl.BeginConnect(chatGroupID); }) );
             this.chatGroup = multimediaManager.ChatGroupEntrance.Join(ChatType.Audio, chatGroupID);
             this.chatGroup.SomeoneJoin += OnChatGroup_SomeoneJoin;
             this.chatGroup.SomeoneExit += OnChatGroup_SomeoneExit;
@@ -133,7 +143,7 @@ namespace Client
                 ChatMember member = new ChatMember(unit);
                 memberList.Add(member);
             }
-            this.Builder = this.memberList.Find(a => { return a.MemberID == teacherID; });
+            this.Builder = this.memberList.Find(a => { return a.GetUserId == teacherID; });
         }
 
         /// <summary>

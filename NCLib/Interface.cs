@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OMCS.Passive.Video;
+using OMCS.Passive.WhiteBoard;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -92,18 +94,18 @@ namespace NCLib
         /// </summary>
         /// <param name="serverIP">本地IP</param>
         /// <param name="serverPort">端口</param>
-        void ConnectOMCS(string serverIP, int serverPort);
+        void ConnectOMCS(string serverIP, int serverPort, CameraConnector CameraConnector = null, WhiteBoardConnector WhiteBoardControl = null);
         /// <summary>
         /// 异步连接OMCS服务端
         /// </summary>
         /// <param name="serverIP">本地IP</param>
         /// <param name="serverPort">端口</param>
-        IAsyncResult BeginConnectOMCS(AsyncCallback callback, string serverIP, int serverPort, object state = null);
+        IAsyncResult BeginConnectOMCS(AsyncCallback callback, string serverIP, int serverPort, CameraConnector CameraConnector = null, WhiteBoardConnector WhiteBoardControl = null, object state = null);
         /// <summary>
         /// 指示某人静音
         /// </summary>
         /// <param name="guestId">来访者ID</param>
-        IResult MuteUser(string roomid, string guestId);
+        IResult MuteUser(string roomid, string guestId, bool isMute);
     }
 
     /// <summary>
@@ -212,6 +214,10 @@ namespace NCLib
     /// </summary>
     public interface ISocketAPI
     {
+        /// <summary>
+        /// 抛出异常事件
+        /// </summary>
+        event Action<Exception> OnException;
         /// <summary>
         /// 接入socket
         /// </summary>

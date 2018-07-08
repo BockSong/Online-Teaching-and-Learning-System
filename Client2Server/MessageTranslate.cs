@@ -28,6 +28,7 @@ namespace Client2Server
         private static string _someoneExitRoomInform = "房间名 学号";
         private static string _muteSomeoneInform = "房间名 学号 是否静音";
         private static string _muteInform = "房间名 是否静音";
+        private static string _speakInform = "房间名 学号";
         private static char[] _delimiterChars = { '[', ']', ',' };
    
         #endregion
@@ -115,6 +116,12 @@ namespace Client2Server
                         if (messageType == MessageType.通知)
                         {
                             return result + SplitJointInfo(_muteInform, infos);
+                        }
+                        break;
+                    case MessageContent.发言请求:
+                        if (messageType == MessageType.通知)
+                        {
+                            return result + SplitJointInfo(_speakInform, infos);
                         }
                         break;
                 }

@@ -32,11 +32,11 @@ namespace Client
         /// <summary>
         /// 语音组加入事件传递
         /// </summary>
-        public event Action<ChatMember> SomeoneJoin;
+        public event Action<IUserID> SomeoneJoin;
         /// <summary>
         /// 语音组离开事件传递
         /// </summary>
-        public event Action<ChatMember> SomeoneExit;
+        public event Action<IUserID> SomeoneExit;
         #endregion
 
         public CallOMCS()
@@ -118,7 +118,17 @@ namespace Client
         public void Mute(bool isMute)
         {
             multimediaManager.OutputAudio = !isMute;
+            chatContainer.IsWhiteBoardWatchingOnly = isMute;
         }
 
+        /// <summary>
+        /// 设置摄像头与白板控件
+        /// </summary>
+        /// <param name="CameraConnector"></param>
+        /// <param name="WhiteBoardControl"></param>
+        public void SetControl(CameraConnector CameraConnector = null, WhiteBoardConnector WhiteBoardControl = null)
+        {
+            chatContainer.SetControl(CameraConnector, WhiteBoardControl);
+        }
     }
 }

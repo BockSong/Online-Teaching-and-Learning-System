@@ -7,9 +7,20 @@ using System.Threading.Tasks;
 namespace NCLib
 {
     /// <summary>
+    /// 获取用户ID
+    /// </summary>
+    public interface IUserID
+    {
+        string GetUserId
+        {
+            get;
+        }
+    }
+
+    /// <summary>
     /// 用户信息(抽象)
     /// </summary>
-    public abstract class UserInfo
+    public abstract class UserInfo: IUserID
     {
         /// <summary>
         /// 用户ID唯一
@@ -23,6 +34,14 @@ namespace NCLib
         /// 特权用户
         /// </summary>
         public bool IsPrerogative;
+
+        public string GetUserId
+        {
+            get
+            {
+                return UserId;
+            }
+        }
 
         public UserInfo(string id = null)
         {

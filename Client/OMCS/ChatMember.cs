@@ -1,4 +1,5 @@
 ﻿using ESBasic;
+using NCLib;
 using OMCS.Passive.MultiChat;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    public class ChatMember: IDisposable
+    public class ChatMember: IDisposable, IUserID
     {
         private IChatUnit chatUnit;
-        public string MemberID
+
+        public string GetUserId
         {
             get
             {

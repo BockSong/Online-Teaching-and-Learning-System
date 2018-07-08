@@ -13,9 +13,10 @@ namespace Server.ServerData
 
         public event Action<ChatRoom> RoomEmpty;
 
-        public ChatRoom(string password = "")
+        public ChatRoom(string password = "", UserInfo builder = null)
         {
             Password = password;
+            Builder = builder;
             memberList.ItemAdded += a => { Terminal.ServerPrint(InfoType.信息, "学号" + a.UserId + "加入" + GroupName + "答疑室"); };
             memberList.ItemRemoved += 
                 a => 

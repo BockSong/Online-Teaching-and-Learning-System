@@ -17,6 +17,11 @@ namespace Client
         /// </summary>
         public UserState UserState;
 
+        /// <summary>
+        /// 所在房间
+        /// </summary>
+        public string RoomID;
+
         public User_Client(string id = null):base(id)
         {
             UserState = UserState.未登录;

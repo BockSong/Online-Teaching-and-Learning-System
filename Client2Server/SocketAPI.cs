@@ -14,6 +14,10 @@ namespace Client2Server
         /// 定义的通信Socket
         /// </summary>
         public Socket communicateSocket = null;
+        /// <summary>
+        /// 抛出异常事件
+        /// </summary>
+        public event Action<Exception> OnException;
 
         /// <summary>
         /// Socket套接字入口 交由子类实现
@@ -46,5 +50,9 @@ namespace Client2Server
             throw new NotImplementedException();
         }
 
+        protected void onException(Exception e)
+        {
+            OnException?.Invoke(e);
+        }
     }
 }

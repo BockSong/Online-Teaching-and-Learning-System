@@ -135,7 +135,7 @@ namespace Server
             }
             else//成功创建
             {
-                ChatRoom chatroom = new ChatRoom(password);
+                ChatRoom chatroom = new ChatRoom(password, userInfo);
                 chatroom.RoomEmpty += RoomEmpty;
                 chatroom.Builder = userInfo;
                 chatroom.GroupName = roomID;
@@ -257,12 +257,11 @@ namespace Server
             {
                 runningData.ChatRoom_id[roomID].memberList.Remove(userInfo);
                 ((User_Server)userInfo).RoomIDs.Remove(roomID);
-                if (runningData.ChatRoom_id.ContainsKey(roomID))
-                    foreach (UserInfo user in runningData.ChatRoom_id[roomID].memberList)
-                    {
-                        ServerSocket.Send(runningData.Clients_id[user.UserId], MessageTranslate.EncapsulationInfo(MessageContent.某人退出答疑室, MessageType.通知, roomID, userInfo.UserId));
-                    }
                 result = new Result(baseResult.Successful);
+            }
+            if (result.BaseResult == baseResult.Faild)
+            {
+                Terminal.ServerPrint(InfoType.响应, "<" + receiveInfo.RemoteEndPoint + ">:" + "失败 描述:" + result.Info);
             }
             return result;
         }
@@ -281,6 +280,10 @@ namespace Server
             {
                 result = new Result(baseResult.Faild, "用户不在答疑室");
             }
+            else if (runningData.ChatRoom_id[roomID].Builder != userInfo)
+            {
+                result = new Result(baseResult.Faild, "非房间创建者");
+            }
             else
             {
                 if (isMute)
@@ -291,8 +294,48 @@ namespace Server
                 {
                     Terminal.ClientPrint(receiveInfo.RemoteEndPoint, InfoType.信息, "允许" + userID + "发言 答疑室=>房间号:" + roomID);
                 }
-                ServerSocket.Send(runningData.Clients_id[userID], MessageTranslate.EncapsulationInfo(MessageContent.静音自己, MessageType.通知, roomID, isMute.ToString()));
+                //ServerSocket.Send(runningData.Clients_id[userID], MessageTranslate.EncapsulationInfo(MessageContent.静音自己, MessageType.通知, roomID, isMute.ToString()));
+                if (runningData.ChatRoom_id.ContainsKey(roomID))
+                    foreach (UserInfo user in runningData.ChatRoom_id[roomID].memberList)
+                    {
+                        ServerSocket.Send(runningData.Clients_id[user.UserId], MessageTranslate.EncapsulationInfo(MessageContent.静音某人, MessageType.通知, roomID, userID, isMute.ToString()));
+                    }
                 result = new Result(baseResult.Successful);
+            }
+            if (result.BaseResult == baseResult.Faild)
+            {
+                Terminal.ServerPrint(InfoType.响应, "<" + receiveInfo.RemoteEndPoint + ">:" + "失败 描述:" + result.Info);
+            }
+            return result;
+        }
+
+        private IResult SpeakInform(IReceiveInfo receiveInfo, UserInfo userInfo)
+        {
+            string roomID = receiveInfo.Message["房间名"];
+            Terminal.ClientPrint(receiveInfo.RemoteEndPoint, InfoType.请求, "发言请求=>" + receiveInfo.Message["学号"] + "房间号:" + roomID);
+            IResult result;
+            if (!runningData.ChatRoom_id.ContainsKey(roomID))//房间存在判定
+            {
+                result = new Result(baseResult.Faild, "该答疑室未被创建");
+            }
+            else if (!runningData.ChatRoom_id[roomID].memberList.Contains(userInfo))
+            {
+                result = new Result(baseResult.Faild, "用户不在答疑室");
+            }
+            else
+            {
+                User_Server builder = (User_Server)runningData.ChatRoom_id[roomID].Builder;
+                if (builder.RoomIDs.Contains(roomID))
+                {
+                    ServerSocket.Send(runningData.Clients_id[builder.UserId], MessageTranslate.EncapsulationInfo(MessageContent.发言请求, MessageType.通知, roomID, userInfo.UserId));
+                    result = new Result(baseResult.Successful);
+                }
+                else
+                    result = new Result(baseResult.Faild, "答疑室已无老师");
+            }
+            if (result.BaseResult == baseResult.Faild)
+            {
+                Terminal.ServerPrint(InfoType.响应, "<" + receiveInfo.RemoteEndPoint + ">:" + "失败 描述:" + result.Info);
             }
             return result;
         }
@@ -353,6 +396,13 @@ namespace Server
                         MuteUserInform(receiveInfo, runningData.Clients_remoteEndPoint[remoteEndPoint]);
                     }
                     break;
+                case MessageContent.发言请求:
+                    if (messageType == MessageType.通知)
+                    {
+                        SpeakInform(receiveInfo, runningData.Clients_remoteEndPoint[remoteEndPoint]);
+                    }
+                    break;
+
             }
         }
 

@@ -42,9 +42,9 @@ namespace Client2Server
                         callBack(serverIP.ToString());
                 }, null);
             }
-            catch
+            catch(Exception e)
             {
-                throw new Exception(string.Format("尝试连接{0}不成功!", IP));
+                onException(e);
             }
             return new Result(baseResult.Successful, "客户端请求连接Socket(IP:" + IP + "PORT:" + port + ")中..\n");
         }
@@ -57,18 +57,26 @@ namespace Client2Server
         /// <returns>发送结果</returns>
         public void Send(string info, Action<string> callBack = null)
         {
-            if (base.communicateSocket.Connected == false)
+            try
             {
-                throw new Exception("还没有建立连接, 不能发送消息");
+                if (base.communicateSocket.Connected == false)
+                {
+                    throw new Exception("还没有建立连接, 不能发送消息");
+                }
             }
+            catch(Exception e)
+            {
+                onException(e);
+                callBack?.Invoke(baseResult.Faild.ToString());
+                return;
+            }         
             Byte[] msg = Encoding.UTF8.GetBytes(info);
             base.communicateSocket.BeginSend(msg, 0, msg.Length, SocketFlags.None,
                 ar =>
                 {
                     //结束挂起的异步线程
                     base.communicateSocket.EndSend(ar);
-                    if (callBack != null)
-                        callBack(info);
+                    callBack?.Invoke(info);
                 }, null);
             //return new Result(baseResult.Successful, "成功发送请求");
         }
@@ -80,6 +88,11 @@ namespace Client2Server
         /// <returns>处理结果</returns>
         public void Receive(Action<string> callBack = null)
         {
+            if (communicateSocket.Connected == false)
+            {
+                onException(new Exception("未与服务器建立连接"));
+                return;
+            }
             Byte[] msg = new byte[1024];
             //异步的接受消息
             base.communicateSocket.BeginReceive(msg, 0, msg.Length, SocketFlags.None,
@@ -97,8 +110,8 @@ namespace Client2Server
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e.Message);
                         base.communicateSocket.Close();
+                        onException(e);
                     }
                 }, null);
         }

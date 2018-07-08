@@ -19,10 +19,6 @@ namespace Client2Server
         /// socket断开 掉线事件
         /// </summary>
         public event Action<string> OnClientOffline;
-        /// <summary>
-        /// 抛出异常事件
-        /// </summary>
-        public event Action<Exception> OnException;
 
         /// <summary>
         /// 重写服务端Access函数
@@ -70,7 +66,7 @@ namespace Client2Server
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    onException(e);
                 }
             }, null);
         }
@@ -139,7 +135,7 @@ namespace Client2Server
                         }
                         else//对于其他的异常 移除维持的Socket并触发异常事件
                         {
-                            OnException?.Invoke(e);
+                            onException(e);
                             clientConnections.Remove(remoteEndPoint);
                             cSocket.Close();
                             OnClientOffline?.Invoke(remoteEndPoint);
