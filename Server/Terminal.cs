@@ -17,12 +17,12 @@ namespace Server
 
         #region 事件集
         /// <summary>
-        /// 新消息到来事件
+        /// 新消息到来事件（调用Form1.cs中的print）
         /// </summary>
         public static event NewMessagePrintEventHandler OnNewMessagePrint;
         #endregion
 
-        #region 消息打印
+        #region 为Server编写消息打印接口
         /// <summary>
         /// 设置服务端消息题头
         /// </summary>
@@ -43,6 +43,7 @@ namespace Server
         }
 
         /// <summary>
+        /// 指定Title、info和type的打印输出
         /// eg:[服务端127.0.0.1][type]:info
         /// </summary>
         /// <param name="type"></param>
@@ -67,6 +68,7 @@ namespace Server
         }
 
         /// <summary>
+        /// 打印来自客户端的请求
         /// eg:[客户端127.0.0.1][type]:info
         /// </summary>
         /// <param name="remoteEndPoint"></param>

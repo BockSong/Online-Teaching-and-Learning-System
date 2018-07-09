@@ -15,7 +15,7 @@ namespace Server
     /// <summary>
     /// 服务端
     /// </summary>
-    //[AOP]
+    //[AOP]-面向切面
     public class Server : IServer
     {
         /// <summary>
@@ -39,12 +39,13 @@ namespace Server
             }
         }
 
+        //构造函数
         public Server(string IP, int port, string user, string password, string url, string database, string dbType)
         {
-            if (dbType == "MYSQL")
-                ServerCallDatabase = new ServerCallMySQL();
-            else
-                ServerCallDatabase = new ServerCallDatabase();
+            //if (dbType == "MYSQL")
+                ServerCallDatabase = new ServerCallMySQL(runningData.DbUser, runningData.DbPassword, runningData.DbUrl, runningData.Database);
+            //else
+                //ServerCallDatabase = new ServerCallDatabase();
             ServerSocket = new ServerSocket();
             ServerSocket.OnClientOffline += ClientOffline;
             ServerSocket.OnException += OnException;
@@ -62,6 +63,7 @@ namespace Server
         /// <summary>
         /// 初始化
         /// </summary>
+        //先检查服务器状态；然后连接数据库；最后初始化套接字。如果出错则给出错误信息。
         public void Init()
         {
             if (runningData.IsInit == ServerState.初始化完成)
@@ -80,7 +82,7 @@ namespace Server
                 Terminal.SetServerTitle(runningData.Ip, runningData.Port);
                 Terminal.ServerPrint(InfoType.信息, "服务器初始化中...");
                 Terminal.ServerPrint(InfoType.信息, "连接数据库");
-                IResult result = ServerCallDatabase.ConnectDatabase(runningData.DbUser, runningData.DbPassword, runningData.DbUrl, runningData.Database);
+                IResult result = ServerCallDatabase.ConnectDatabase();
                 if (result.BaseResult == baseResult.Faild)
                 {
                     Terminal.ServerPrint(InfoType.异常, "初始化失败 原因:" + result.Info);
@@ -119,6 +121,7 @@ namespace Server
 
         #region 业务逻辑
         //[AOPMethod("创建答疑室请求", PreProceed, PostProceed)]
+        //业务逻辑流程：调用数据库进行数据验证；若通过则更新服务器数据；在Terminal上打印信息；将验证结果返回给客户端
         private IResult CreateRoomRequest(IReceiveInfo receiveInfo, UserInfo userInfo)
         {
             string roomID = receiveInfo.Message["房间名"];
@@ -133,7 +136,7 @@ namespace Server
             {
                 result = new Result(baseResult.Faild, "该答疑室已存在");
             }
-            else//成功创建
+            else//成功创建，在字典中添加相应元素
             {
                 ChatRoom chatroom = new ChatRoom(password, userInfo);
                 chatroom.RoomEmpty += RoomEmpty;
@@ -347,13 +350,14 @@ namespace Server
         #endregion
 
         #region 回调函数
+        //初始化套接字时调用
         private void Accept(string remoteEndPoint)
         {
             Terminal.ServerPrint(InfoType.信息, "接收到来自:<" + remoteEndPoint + ">连接请求。建立连接");
             runningData.Clients_remoteEndPoint[remoteEndPoint] = new User_Server();
             ServerSocket.Receive(remoteEndPoint, Receive);
         }
-
+        //Accept里调用；根据messageContent执行相应业务逻辑
         private void Receive(string remoteEndPoint, string info)
         {
             Dictionary<string, string> message;
@@ -418,10 +422,12 @@ namespace Server
         #endregion
 
         #region 事件监听
+        //作为属性添加到相应对象，通过套接字进行监听
         /// <summary>
         /// 客户端掉线事件
         /// </summary>
         /// <param name="remoteEndPoint"></param>
+        //从在的答疑室中清除该用户
         private void ClientOffline(string remoteEndPoint)
         {
             Terminal.ServerPrint(InfoType.信息, "客户端<" + remoteEndPoint + ">断开了连接。服务器释放通信连接");
@@ -429,7 +435,7 @@ namespace Server
             if (runningData.Clients_remoteEndPoint.ContainsKey(remoteEndPoint))
             {
                 id = runningData.Clients_remoteEndPoint[remoteEndPoint].UserId;
-                //从在的答疑室中清除
+                //从在的答疑室中清除该用户
                 foreach (string roomID in ((User_Server)runningData.Clients_remoteEndPoint[remoteEndPoint]).RoomIDs)
                 {
                     runningData.ChatRoom_id[roomID].memberList.Remove(runningData.Clients_remoteEndPoint[remoteEndPoint]);
@@ -459,6 +465,7 @@ namespace Server
         /// 答疑室空事件
         /// </summary>
         /// <param name="chatRoom"></param>
+        //清除该答疑室
         private void RoomEmpty(ChatRoom chatRoom)
         {
             string roomid = chatRoom.GroupName;

@@ -18,3 +18,7 @@ D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBas
 D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\obj\Debug\Server2Database.csprojResolveAssemblyReference.cache
 D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\obj\Debug\Server2DataBase.dll
 D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\obj\Debug\Server2DataBase.pdb
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\OMCS.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\ESBasic.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\OMCS.xml
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\Server2DataBase\bin\Debug\ESBasic.xml

@@ -25,7 +25,7 @@ namespace Server2DataBase
         /// <param name="userId">用户ID</param>
         /// <param name="password">密码</param>
         /// <returns>处理结果</returns>
-        IResult AddUser(UserInfo info, string password, int age = 20, string sex = "man");
+        IResult AddUser(UserInfo info, string password, int permission = 0, int age = 20, string sex = "man");
 
         /// <summary>
         /// 验证用户信息
@@ -65,12 +65,8 @@ namespace Server2DataBase
         /// <summary>
         /// 连接数据库
         /// </summary>
-        /// <param name="user">数据库账号</param>
-        /// <param name="password">密码</param>
-        /// <param name="url">数据库地址</param>
-        /// <param name="database">数据库名称</param>
         /// <returns>链接结果</returns>
-        IResult ConnectDatabase(string user, string password, string url, string database);
+        IResult ConnectDatabase();
 
         /// <summary>
         /// 执行SQL结构化查询语句
@@ -81,7 +77,7 @@ namespace Server2DataBase
         IResult ExecuteStructuredQueryLanguage(string sql, string tableTitle);
 
 
-        //version.date.7.5
+        //version.date.7.7
         /// <summary>
         /// 获取加入日期
         /// </summary>
@@ -135,7 +131,7 @@ namespace Server2DataBase
         /// <param name="starttime"></param>
         /// <param name="endtime"></param>
         /// <returns>处理结果</returns>
-        IResult AddRecord(string recordid, string roomid, DateTime starttime, DateTime endtime);
+        int AddRecord(string roomid, DateTime starttime, DateTime endtime);
 
         /// <summary>
         /// 添加加入关系
@@ -143,7 +139,7 @@ namespace Server2DataBase
         /// <param name="userid">用户ID</param>
         /// <param name="roomid">答疑室ID</param>
         /// <returns>处理结果</returns>
-        IResult AddJoin(string userid, string roomid);
+        IResult AddJoin(string userid, int recordid, DateTime userjointime, DateTime userouttime, int scount);
 
         /// <summary>
         /// 获取开始答疑时间
@@ -151,7 +147,7 @@ namespace Server2DataBase
         /// <param name="recordid"></param>
         /// <param name="roomid"></param>
         /// <returns>获取失败时返回9999-01-01</returns>
-        DateTime GetStart(string recordid, string roomid);
+        DateTime GetStart(int recordid, string roomid);
 
         /// <summary>
         /// 设置开始答疑时间
@@ -160,7 +156,7 @@ namespace Server2DataBase
         /// <param name="recordid"></param>
         /// <param name="roomid"></param>
         /// <returns></returns>
-        IResult SetStart(DateTime start, string recordid, string roomid);
+        IResult SetStart(DateTime start, int recordid, string roomid);
 
         /// <summary>
         /// 获取结束答疑时间
@@ -168,7 +164,7 @@ namespace Server2DataBase
         /// <param name="recordid"></param>
         /// <param name="roomid"></param>
         /// <returns>获取失败时返回9999-01-01</returns>
-        DateTime GetEnd(string recordid, string roomid);
+        DateTime GetEnd(int recordid, string roomid);
 
         /// <summary>
         /// 设置结束答疑时间
@@ -177,14 +173,14 @@ namespace Server2DataBase
         /// <param name="recordid"></param>
         /// <param name="roomid"></param>
         /// <returns></returns>
-        IResult SetEnd(DateTime end, string recordid, string roomid);
+        IResult SetEnd(DateTime end, int recordid, string roomid);
 
         /// <summary>
         /// 获取答疑室记录的用户列表
         /// </summary>
         /// <param name="recordid"></param>
         /// <returns></returns>
-        List<string> GetUser(string recordid);
+        List<string> GetUser(string roomid, int recordid);
 
         /// <summary>
         /// 获取答疑室人数
@@ -200,5 +196,23 @@ namespace Server2DataBase
         /// <param name="count"></param>
         /// <returns></returns>
         IResult SetCount(string roomid, int count);
+
+        /// <summary>
+        /// 获取答疑室记录的对应用户的发言次数
+        /// </summary>
+        /// <returns></returns>
+        int GetScount(string userid, int recordid);
+
+        /// <summary>
+        /// 获取答疑室记录的对应用户进入时间
+        /// </summary>
+        /// <returns></returns>
+        DateTime GetUserJoinTime(string userid, int recordid);
+
+        /// <summary>
+        /// 获取答疑室记录的对应用户退出时间
+        /// </summary>
+        /// <returns></returns>
+        DateTime GetUserOutTime(string userid, int recordid);
     }
 }

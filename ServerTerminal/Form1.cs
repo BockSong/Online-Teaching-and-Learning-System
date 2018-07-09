@@ -18,7 +18,7 @@ namespace ServerTerminal
     {
         Server.Server myServer;
         public Form1()
-        {
+        {   //读取配置文件，生成Server对象
             Terminal.OnNewMessagePrint += print;
             myServer = new Server.Server(
                 ConfigurationManager.AppSettings["IP"],
@@ -31,6 +31,7 @@ namespace ServerTerminal
             InitializeComponent();
         }
 
+        //“发送”按钮事件响应
         private void button1_Click(object sender, EventArgs e)
         {
             Terminal.ServerPrint(InfoType.信息, InputBox.Text);
@@ -65,6 +66,7 @@ namespace ServerTerminal
 
         private void InputBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //若接收到回车，发送消息
             if (e.KeyChar == System.Convert.ToChar(13))
             {
                 e.Handled = true;
@@ -73,8 +75,10 @@ namespace ServerTerminal
             }
         }
 
+        //“运行”按钮事件响应
         private void button2_Click(object sender, EventArgs e)
         {
+            //新线程上对server对象初始化
             Thread t1 = new Thread(() => { myServer.Init(); });
             t1.IsBackground = true;
             t1.Start();

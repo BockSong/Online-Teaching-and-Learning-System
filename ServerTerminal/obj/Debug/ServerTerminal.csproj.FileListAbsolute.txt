@@ -38,3 +38,7 @@ D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal
 D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\obj\Debug\ServerTerminal.Form1.resources
 D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\obj\Debug\ServerTerminal.Properties.Resources.resources
 D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\obj\Debug\ServerTerminal.csproj.GenerateResource.Cache
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\bin\Debug\OMCS.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\bin\Debug\ESBasic.dll
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\bin\Debug\OMCS.xml
+D:\学业\大学\大三下\软工课设\Project\NetworkConference\ServerTerminal\bin\Debug\ESBasic.xml

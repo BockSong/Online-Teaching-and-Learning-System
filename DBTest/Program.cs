@@ -13,8 +13,8 @@ namespace DBTest
     {
         static void Main(string[] args)
         {
-            IDBConnection scd = new ServerCallMySQL();
-            IResult r = scd.ConnectDatabase("root", "123456", "154.8.211.49", "NCDB");
+            IDBConnection scd = new ServerCallMySQL("root", "123456", "154.8.211.49", "NCDB");
+            IResult r = scd.ConnectDatabase();
             #region Shop
             //scd.ExecuteStructuredQueryLanguage(@"select 名称 from 商店 where 商店.地址 LIKE '上海%'","aa");
             //foreach (DataRow theRow in scd.TmpDataSet.Tables["aa"].Rows)
